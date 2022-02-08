@@ -1,12 +1,17 @@
 public class ArrayGenerator {
 
-    private ArrayGenerator(){}
+    private ArrayGenerator() {
+    }
 
-    public static Integer[] generateOrderedArray(int n){
+    /**
+     * 数组生成器
+     */
+    public static Integer[] generateOrderedArray(int n) {
 
         Integer[] arr = new Integer[n];
-        for(int i = 0; i < n; i ++)
+        for (int i = 0; i < n; i++) {
             arr[i] = i;
+        }
         return arr;
     }
 }
