@@ -18,6 +18,7 @@ public class SelectionSort {
     }
 
     // 换个方法实现选择排序法，我们叫 sort2
+    // 循环不变量是 “arr[i..n) 已排序，arr[0..i) 未排序” 版本的选择排序
     public static <E extends Comparable> void sort2(E[] arr){
 
         for(int i = arr.length - 1; i >= 0; i --){
