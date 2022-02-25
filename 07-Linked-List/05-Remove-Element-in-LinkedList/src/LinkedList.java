@@ -44,6 +44,7 @@ public class LinkedList<E> {
 
     // 在链表的index(0-based)位置添加新的元素e
     // 在链表中不是一个常用的操作，练习用：）
+    // O(n)
     public void add(int index, E e) {
 
         if (index < 0 || index > size)
@@ -58,17 +59,20 @@ public class LinkedList<E> {
     }
 
     // 在链表头添加新的元素e
+    // O(1)
     public void addFirst(E e) {
         add(0, e);
     }
 
     // 在链表末尾添加新的元素e
+    // O(n)
     public void addLast(E e) {
         add(size, e);
     }
 
     // 获得链表的第index(0-based)个位置的元素
     // 在链表中不是一个常用的操作，练习用：）
+    // O(n)
     public E get(int index) {
 
         if (index < 0 || index >= size)
@@ -92,6 +96,7 @@ public class LinkedList<E> {
 
     // 修改链表的第index(0-based)个位置的元素为e
     // 在链表中不是一个常用的操作，练习用：）
+    // O(n)
     public void set(int index, E e) {
         if (index < 0 || index >= size)
             throw new IllegalArgumentException("Set failed. Illegal index.");
@@ -103,6 +108,7 @@ public class LinkedList<E> {
     }
 
     // 查找链表中是否有元素e
+    // O(n)
     public boolean contains(E e) {
         Node cur = dummyHead.next;
         while (cur != null) {
@@ -116,11 +122,13 @@ public class LinkedList<E> {
     // 从链表中删除index(0-based)位置的元素, 返回删除的元素
     // 在链表中不是一个常用的操作，练习用：）
     // 关键是找到待删除元素的前一个元素
+    // 返回删除的元素
+    // O(n)
     public E remove(int index) {
         if (index < 0 || index >= size)
             throw new IllegalArgumentException("Remove failed. Index is illegal.");
 
-        Node prev = dummyHead;
+        Node prev = dummyHead; // 找到待删除元素的前一个元素
         for (int i = 0; i < index; i++)
             prev = prev.next;
 
@@ -133,11 +141,13 @@ public class LinkedList<E> {
     }
 
     // 从链表中删除第一个元素, 返回删除的元素
+    // O(1)
     public E removeFirst() {
         return remove(0);
     }
 
     // 从链表中删除最后一个元素, 返回删除的元素
+    // O(n)
     public E removeLast() {
         return remove(size - 1);
     }
